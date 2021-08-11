@@ -3,8 +3,8 @@ package org.example;
 public class WebService {
   public final Service service;
 
-  public WebService() {
-    service = new Service();
+  public WebService(Service service) {
+    this.service = service;
   }
 
   public WebServiceResponse handleRequest(WebServiceRequest webServiceRequest) {

@@ -3,8 +3,8 @@ package org.example;
 public class Service {
   private final DBClient dbClient;
 
-  public Service() {
-    dbClient = new DBClient("us-west-1");
+  public Service(DBClient dbClient) {
+    this.dbClient = dbClient;
   }
 
   public String sendHello(String toName, String fromName) {
