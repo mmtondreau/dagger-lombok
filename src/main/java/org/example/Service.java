@@ -1,8 +1,11 @@
 package org.example;
 
+import javax.inject.Inject;
+
 public class Service {
   private final DBClient dbClient;
 
+  @Inject
   public Service(DBClient dbClient) {
     this.dbClient = dbClient;
   }

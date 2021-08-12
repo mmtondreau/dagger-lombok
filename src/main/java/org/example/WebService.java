@@ -1,8 +1,11 @@
 package org.example;
 
+import javax.inject.Inject;
+
 public class WebService {
   public final Service service;
 
+  @Inject
   public WebService(Service service) {
     this.service = service;
   }

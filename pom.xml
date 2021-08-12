@@ -12,6 +12,14 @@
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
+  <repositories>
+    <repository>
+      <id>google-maven</id>
+      <name>Google Maven Repo</name>
+      <url>https://maven.google.com</url>
+    </repository>
+  </repositories>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>15</maven.compiler.source>
@@ -31,6 +39,11 @@
       <artifactId>mockito-junit-jupiter</artifactId>
       <version>3.11.2</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.dagger</groupId>
+      <artifactId>dagger</artifactId>
+      <version>2.38.1</version>
     </dependency>
   </dependencies>
 
@@ -54,10 +67,16 @@
             <release>15</release>
             <compilerArgs>
               <arg>-Xlint:all,-serial,-options,-deprecation,-preview</arg>
-              <arg>-Werror</arg>
               <arg>-parameters</arg>
               <arg>--enable-preview</arg>
             </compilerArgs>
+            <annotationProcessorPaths>
+              <path>
+                <groupId>com.google.dagger</groupId>
+                <artifactId>dagger-compiler</artifactId>
+                <version>2.38.1</version>
+              </path>
+            </annotationProcessorPaths>
           </configuration>
         </plugin>
         <plugin>
