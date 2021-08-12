@@ -11,10 +11,10 @@ public class WebService {
   }
 
   public WebServiceResponse handleRequest(WebServiceRequest webServiceRequest) {
-    WebServiceResponse response = new WebServiceResponse();
     String result = service.sendHello(webServiceRequest.getToName(), webServiceRequest.getFromName());
-    response.setStatus(result);
-    return response;
+    return WebServiceResponse.builder()
+        .withStatus(result)
+        .build();
   }
 
 }

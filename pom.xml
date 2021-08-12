@@ -45,6 +45,12 @@
       <artifactId>dagger</artifactId>
       <version>2.38.1</version>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.20</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -76,7 +82,13 @@
                 <artifactId>dagger-compiler</artifactId>
                 <version>2.38.1</version>
               </path>
+              <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
+              </path>
             </annotationProcessorPaths>
+
           </configuration>
         </plugin>
         <plugin>
