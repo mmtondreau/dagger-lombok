@@ -1,14 +1,13 @@
 package org.example;
 
+import lombok.AllArgsConstructor;
+import lombok.NonNull;
+
 import javax.inject.Inject;
 
+@AllArgsConstructor(onConstructor = @__(@Inject))
 public class Service {
-  private final DBClient dbClient;
-
-  @Inject
-  public Service(DBClient dbClient) {
-    this.dbClient = dbClient;
-  }
+  @NonNull private final DBClient dbClient;
 
   public String sendHello(String toName, String fromName) {
     try {

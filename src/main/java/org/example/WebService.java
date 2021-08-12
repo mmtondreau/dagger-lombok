@@ -1,14 +1,13 @@
 package org.example;
 
+import lombok.AllArgsConstructor;
+import lombok.NonNull;
+
 import javax.inject.Inject;
 
+@AllArgsConstructor(onConstructor = @__(@Inject))
 public class WebService {
-  public final Service service;
-
-  @Inject
-  public WebService(Service service) {
-    this.service = service;
-  }
+  @NonNull public final Service service;
 
   public WebServiceResponse handleRequest(WebServiceRequest webServiceRequest) {
     String result = service.sendHello(webServiceRequest.getToName(), webServiceRequest.getFromName());
